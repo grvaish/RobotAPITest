@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.7.1 on win32)" generated="20240614 14:59:00.992" rpa="false" schemaversion="4">
+<suite id="s1" name="TC5 XML" source="C:\Users\Lenovo\PycharmProjects\APIAutomation\TestCases\TC5_XML.robot">
+<test id="s1-t1" name="xml_File_Testing" line="7">
+<kw name="Parse Xml" library="XML">
+<var>${xml_obj}</var>
+<arg>F:/SeleniumPractice/xmldata/employees.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<msg timestamp="20240614 14:59:01.258" level="INFO">${xml_obj} = &lt;Element 'videoGames' at 0x03F52330&gt;</msg>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${name_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//videoGame[1]/name</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20240614 14:59:01.258" level="INFO">${name_value} = Unicorn</msg>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name_value}</arg>
+<arg>Unicorn</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Get Element" library="XML">
+<var>${name_value}</var>
+<arg>${xml_obj}</arg>
+<arg>.//videoGame[1]/name</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<msg timestamp="20240614 14:59:01.258" level="INFO">${name_value} = &lt;Element 'name' at 0x03F52450&gt;</msg>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name_value.text}</arg>
+<arg>Unicorn</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Element Text Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>Unicorn</arg>
+<arg>.//videoGame[1]/name</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.258"/>
+</kw>
+<kw name="Get Element Count" library="XML">
+<var>${count}</var>
+<arg>${xml_obj}</arg>
+<arg>.//videoGame</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<msg timestamp="20240614 14:59:01.274" level="INFO">4 elements matched './/videoGame'.</msg>
+<msg timestamp="20240614 14:59:01.274" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${count}</arg>
+<arg>4</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20240614 14:59:01.274" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Element Attribute Should Be" library="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>4</arg>
+<arg>.//videoGame[4]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Get Child Elements" library="XML">
+<var>${child_elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//videoGame[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<msg timestamp="20240614 14:59:01.274" level="INFO">${child_elements} = [&lt;Element 'name' at 0x03F52450&gt;, &lt;Element 'releaseDate' at 0x03F52480&gt;, &lt;Element 'reviewScore' at 0x03F524B0&gt;]</msg>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${child_elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20240614 14:59:01.274" level="INFO">Length is 3</msg>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${name}</var>
+<arg>${child_elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20240614 14:59:01.274" level="INFO">${name} = Unicorn</msg>
+<status status="PASS" starttime="20240614 14:59:01.274" endtime="20240614 14:59:01.274"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${releaseDate}</var>
+<arg>${child_elements[1]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20240614 14:59:01.289" level="INFO">${releaseDate} = 2005-10-01</msg>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Get Element Text" library="XML">
+<var>${reviewScore}</var>
+<arg>${child_elements[2]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<msg timestamp="20240614 14:59:01.289" level="INFO">${reviewScore} = 85</msg>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${releaseDate}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${reviewScore}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name}</arg>
+<arg>Unicorn</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.289"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${releaseDate}</arg>
+<arg>2005-10-01</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240614 14:59:01.289" endtime="20240614 14:59:01.305"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${reviewScore}</arg>
+<arg>85</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240614 14:59:01.305" endtime="20240614 14:59:01.305"/>
+</kw>
+<status status="PASS" starttime="20240614 14:59:01.258" endtime="20240614 14:59:01.305"/>
+</test>
+<status status="PASS" starttime="20240614 14:59:01.024" endtime="20240614 14:59:01.305"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC5 XML">TC5 XML</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
